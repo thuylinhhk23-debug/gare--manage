@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-danger": "#DC2626", "on-secondary-fixed-variant": "#004b73", "secondary-container": "#5bb8fe", "inverse-on-surface": "#eaf1ff", "outline": "#757684", "inverse-primary": "#b8c4ff", "error-container": "#ffdad6", "on-surface-variant": "#444653", "secondary": "#006398", "on-primary-container": "#a8b8ff", "background": "#f8f9ff", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#b8c4ff", "on-background": "#0b1c30", "primary": "#00288e", "status-in-progress": "#D97706", "tertiary": "#2d3449", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#173bab", "on-error": "#ffffff", "secondary-fixed-dim": "#93ccff", "on-secondary-container": "#00476e", "tertiary-container": "#434b60", "on-surface": "#0b1c30", "status-danger-subtle": "#FEF2F2", "outline-variant": "#c4c5d5", "on-secondary-fixed": "#001d31", "primary-fixed": "#dde1ff", "tertiary-fixed-dim": "#bec6e0", "status-completed-subtle": "#ECFDF5", "on-tertiary-container": "#b4bbd5", "error": "#ba1a1a", "slate-text-primary": "#0F172A", "surface": "#f8f9ff", "slate-border": "#E2E8F0", "surface-bright": "#f8f9ff", "surface-canvas": "#F8FAFC", "on-error-container": "#93000a", "status-in-progress-subtle": "#FFFBEB", "brand-accent-blue": "#2563EB", "on-tertiary": "#ffffff", "surface-container-highest": "#d3e4fe", "primary-container": "#1e40af", "surface-container-low": "#eff4ff", "on-tertiary-fixed": "#131b2e", "slate-text-secondary": "#475569", "surface-dim": "#cbdbf5", "secondary-fixed": "#cce5ff", "inverse-surface": "#213145", "on-primary": "#ffffff", "tertiary-fixed": "#dae2fd", "on-primary-fixed": "#001453", "surface-container": "#e5eeff", "surface-tint": "#3755c3", "on-tertiary-fixed-variant": "#3f465c", "surface-variant": "#d3e4fe", "surface-container-high": "#dce9ff", "status-completed": "#059669" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin-desktop": "2rem" }, "fontFamily": { "label-md": [ "Inter" ], "headline-xl-mobile": [ "Manrope" ], "body-sm": [ "Inter" ], "body-lg": [ "Inter" ], "headline-lg-mobile": [ "Manrope" ], "body-md": [ "Inter" ], "headline-lg": [ "Manrope" ], "label-code": [ "JetBrains Mono" ], "headline-xl": [ "Manrope" ], "headline-md": [ "Manrope" ], "stat-display": [ "Manrope" ] }, "fontSize": { "label-md": [ "13px", { "lineHeight": "16px", "fontWeight": "600" } ], "headline-xl-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-lg-mobile": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "label-code": [ "12px", { "lineHeight": "16px", "fontWeight": "500" } ], "headline-xl": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "headline-md": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "stat-display": [ "28px", { "lineHeight": "34px", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 flex items-center gap-space-sm px-space-lg bg-surface-container-lowest"><img alt="Apex Auto Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHSIiIjYABwFRCqc2E5PxLelAJuiMYF8EFaMRFkeEUupukEBUumN9yEApVKY3VeNv3-I4S9LFQtJHzH15s3wmn4dQzeUWw3PwKZxsX5zeRccPwa6yrLIODfA_IiP5f3erk1Ipx9cY9PtBc-HKS679myoUT8JXLscVgeNQKEuasb1PIJRjCHKWtSCEVVzhl0XQrpGTlvzTFJU_hZk07-3ecKtU3QKCnGc3lxR6UGTQOi1E2tluATbTsQQ"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-primary leading-none">APEX AUTO</span><span class="font-label-code text-label-code text-slate-text-secondary uppercase tracking-wider">SaaS Workshop</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs mb-space-xs"><span class="font-label-code text-label-code text-outline uppercase tracking-wider">Bảng điều khiển &amp; Quy trình</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary font-bold shadow-sm rounded-xl"><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="tong-quan" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Tổng quan</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary text-on-primary font-bold shadow-sm rounded-xl" data-path="tiep-nhan-bao-gia" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">assignment_add</span><span class="font-label-md text-label-md">Tiếp nhận &amp; Báo giá</span></div><span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-status-in-progress-subtle text-status-in-progress">5</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="lenh-sua-chua" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">build_circle</span><span class="font-label-md text-label-md">Lệnh sửa chữa (RO)</span></div><span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-primary-fixed text-on-primary-fixed-variant">12</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="quan-ly-kho" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">Quản lý kho phụ tùng</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="khach-hang-xe" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">directions_car</span><span class="font-label-md text-label-md">Khách hàng &amp; Xe</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="thu-chi-hoa-don" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">Thu chi &amp; Hóa đơn</span></div></a></nav></div></div><div class="p-space-md bg-surface-container-lowest"><div class="px-space-sm py-space-xs mb-space-xs"><span class="font-label-code text-label-code text-outline uppercase tracking-wider">Cấu hình</span></div><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="cai-dat-he-thong" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Cài đặt hệ thống</span></div></a><div class="mt-space-md pt-space-md flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs text-status-completed"><span class="w-2 h-2 rounded-full bg-status-completed inline-block"></span><span class="font-label-code text-label-code text-slate-text-secondary">Gara Online (Cloud)</span></div><span class="font-label-code text-label-code text-outline">v2.4.0</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-xl text-on-surface cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-brand-accent-blue text-[18px]">store</span><span class="font-label-md text-label-md font-semibold text-slate-text-primary">Chi nhánh Gara Trung Tâm - Q.7, TP.HCM</span><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline pl-10 pr-4 py-2 rounded-xl text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-brand-accent-blue transition-all" placeholder="Tìm biển số xe, số điện thoại, mã phiếu RO..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-brand-accent-blue text-on-primary px-space-md py-2 rounded-xl font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>+ Tiếp nhận xe mới</span></button><div class="relative flex items-center justify-center w-10 h-10 rounded-xl hover:bg-surface-container-low text-on-surface-variant cursor-pointer transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-status-danger"></span></div><div class="h-8 w-px bg-slate-border"></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdHDEP6yrvwTmclUuJhJwo7VAMDnSsx1legktNgvverKff3ZU9C7Fddw1N_rTNuWRM90VfWKq3th8Fe_E1hYbUPPGOj5AUV0SwzrHqanjdKgBzCkNop7Qm5-m1_RsLayz3lFdJnY0kQIK7LQvOywxmabWCoYW2esQ0fP5sqmVWMat9DOWlGutGF4R_V3qQlTAP51RCv3iniqNafLl_DeDn3ZuAX4WmUfgF4Rk2HmocmJCiJFHPrNVpFg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-slate-text-primary leading-tight">Huy Trần</span><span class="font-body-sm text-body-sm text-slate-text-secondary leading-tight">Trưởng xưởng dịch vụ</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 min-h-screen w-full px-gutter-desktop py-space-lg bg-surface-canvas"><div class="flex flex-col w-full gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-slate-text-primary">Phiếu Tiếp Nhận Xe &amp; Báo Giá</span>
+<span class="font-label-code text-label-code bg-surface-container-high px-space-sm py-0.5 rounded-lg text-primary font-bold">#TN-2025-0842</span>
+<div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-status-in-progress-subtle text-status-in-progress font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-status-in-progress animate-pulse"></span>
+<span>Đang khảo sát xe</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md text-slate-text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span>Tiếp nhận lúc: 08:35 - 24/10/2025</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">person</span>Cố vấn dịch vụ: Huy Trần</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-brand-accent-blue font-label-md"><span class="material-symbols-outlined text-[16px]">sync</span>Đồng bộ thời gian thực</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm z-10 flex-wrap">
+<button class="inline-flex items-center gap-1.5 bg-surface-container-low hover:bg-surface-container text-slate-text-primary px-space-md py-2 rounded-xl font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Lịch sử vào xưởng (3)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 bg-surface-container-low hover:bg-surface-container text-slate-text-primary px-space-md py-2 rounded-xl font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>In phiếu kiểm tra</span>
+</button>
+<button class="inline-flex items-center gap-1.5 bg-primary hover:bg-brand-accent-blue text-on-primary px-space-lg py-2 rounded-xl font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Lưu tạm phiếu</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<div class="xl:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary font-headline-md text-headline-md">
+<span class="material-symbols-outlined text-[22px]">search_check</span>
+<span>Tra cứu &amp; Định danh Xe</span>
+</div>
+<button class="text-brand-accent-blue hover:text-primary font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Nhập xe mới
+          </button>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary font-bold text-[20px]">directions_car</span>
+<input class="w-full bg-surface-container-low text-slate-text-primary pl-10 pr-28 py-2.5 rounded-xl font-label-code text-[15px] focus:outline-none focus:ring-2 focus:ring-brand-accent-blue uppercase tracking-wider font-semibold" placeholder="Nhập biển số hoặc SĐT chủ xe..." type="text" value="51K-892.45"/>
+<button class="absolute right-1.5 top-1.5 bottom-1.5 px-space-md bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-brand-accent-blue transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Tra cứu</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-headline-md font-bold">
+                N
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-slate-text-primary">Nguyễn Hoàng Nam</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-secondary-fixed text-on-secondary-fixed">VIP Silver (-5%)</span>
+</div>
+<span class="font-body-sm text-body-sm text-slate-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">call</span> 0918.452.119 • nam.nguyen@email.vn
+                </span>
+</div>
+</div>
+<button class="text-slate-text-secondary hover:text-primary p-1">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col">
+<span class="font-body-sm text-body-sm text-slate-text-secondary">Địa chỉ đăng ký</span>
+<span class="font-label-md text-label-md text-slate-text-primary truncate">142 Nguyễn Thị Thập, P. Tân Hưng, Q.7, TP.HCM</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col">
+<span class="font-body-sm text-body-sm text-slate-text-secondary">Hạn bảo dưỡng tiếp</span>
+<span class="font-label-md text-label-md text-status-in-progress">Đến hạn (50.000 km)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">directions_car_filled</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-slate-text-primary">Mercedes-Benz C200 Exclusive</span>
+<span class="font-label-code text-label-code text-slate-text-secondary">VIN: WDD2050422R791244 • Năm SX: 2021</span>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded font-label-code text-label-code bg-surface-container text-slate-text-secondary">Sedan 4C</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-slate-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">speed</span> Số ODO hiện tại (km)
+              </label>
+<div class="relative">
+<input class="w-full bg-surface-container-low px-3 py-2 rounded-xl font-label-code text-label-code font-bold text-slate-text-primary focus:outline-none focus:ring-2 focus:ring-brand-accent-blue" type="text" value="48.500"/>
+<span class="absolute right-3 top-2 font-label-code text-body-sm text-slate-text-secondary">KM</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-slate-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_gas_station</span> Mức nhiên liệu
+                </label>
+<span class="font-label-code text-label-code font-bold text-primary" id="fuelText">60%</span>
+</div>
+<div class="h-9 bg-surface-container-low px-3 py-2 rounded-xl flex items-center">
+<input class="w-full accent-primary cursor-pointer" id="fuelRange" max="100" min="0" type="range" value="60"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary font-headline-md text-headline-md">
+<span class="material-symbols-outlined text-[22px]">car_repair</span>
+<span>Khảo sát ngoại quan &amp; Đánh dấu trầy xước</span>
+</div>
+<span class="font-body-sm text-body-sm text-slate-text-secondary">Chạm xe để đánh dấu</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-xl text-body-sm text-slate-text-secondary">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-status-danger"></span>
+<span class="font-label-md text-label-md text-slate-text-primary">Trầy xước (S)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-status-in-progress"></span>
+<span class="font-label-md text-label-md text-slate-text-primary">Móp méo (D)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-brand-accent-blue"></span>
+<span class="font-label-md text-label-md text-slate-text-primary">Nứt vỡ (C)</span>
+</div>
+<span class="ml-auto font-label-code text-label-code text-primary font-bold">3 điểm ghi nhận</span>
+</div>
+<div class="relative bg-surface-container-low rounded-xl p-space-md flex flex-col items-center justify-center overflow-hidden">
+<div class="w-full max-w-md aspect-[16/10] relative flex items-center justify-center select-none" id="carDiagramContainer">
+<svg class="w-full h-full text-outline-variant stroke-current fill-none stroke-[2]" viewbox="0 0 540 280" xmlns="http://www.w3.org/2000/svg">
+<rect class="fill-surface-container-lowest stroke-outline" height="230" rx="40" stroke-width="2.5" width="140" x="200" y="25"></rect>
+<path class="stroke-slate-border" d="M 220 75 Q 270 65 320 75" stroke-width="2"></path>
+<path class="stroke-slate-border" d="M 220 205 Q 270 215 320 205" stroke-width="2"></path>
+<rect class="fill-surface-container-high/40 stroke-slate-border" height="50" rx="8" width="80" x="230" y="85"></rect>
+<rect class="fill-surface-container-high/40 stroke-slate-border" height="50" rx="8" width="80" x="230" y="145"></rect>
+<rect class="fill-tertiary stroke-none" height="42" rx="4" width="12" x="186" y="55"></rect>
+<rect class="fill-tertiary stroke-none" height="42" rx="4" width="12" x="342" y="55"></rect>
+<rect class="fill-tertiary stroke-none" height="42" rx="4" width="12" x="186" y="180"></rect>
+<rect class="fill-tertiary stroke-none" height="42" rx="4" width="12" x="342" y="180"></rect>
+<g class="text-slate-text-secondary text-[11px] font-sans fill-current">
+<text font-weight="600" text-anchor="middle" x="270" y="20">ĐẦU XE</text>
+<text font-weight="600" text-anchor="middle" x="270" y="275">ĐUÔI XE</text>
+<text font-weight="600" text-anchor="middle" x="140" y="145">THÂN TRÁI</text>
+<text font-weight="600" text-anchor="middle" x="400" y="145">THÂN PHẢI</text>
+</g>
+<path class="fill-surface-container-lowest stroke-slate-border" d="M 35 110 L 150 110 L 150 170 L 35 170 Z" rx="6"></path>
+<path class="fill-surface-container-lowest stroke-slate-border" d="M 390 110 L 505 110 L 505 170 L 390 170 Z" rx="6"></path>
+</svg>
+<button class="absolute top-[28%] left-[40%] group flex items-center justify-center" title="Trầy cản trước" type="button">
+<span class="w-6 h-6 rounded-full bg-status-danger text-on-error flex items-center justify-center font-label-code text-[11px] font-bold shadow-md ring-4 ring-status-danger/20 transition-transform group-hover:scale-125">1</span>
+<span class="absolute -bottom-6 hidden group-hover:block bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded text-[10px] whitespace-nowrap z-20">Trầy cản trước phải</span>
+</button>
+<button class="absolute top-[68%] left-[62%] group flex items-center justify-center" title="Móp nhẹ hông sau" type="button">
+<span class="w-6 h-6 rounded-full bg-status-in-progress text-on-error flex items-center justify-center font-label-code text-[11px] font-bold shadow-md ring-4 ring-status-in-progress/20 transition-transform group-hover:scale-125">2</span>
+<span class="absolute -bottom-6 hidden group-hover:block bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded text-[10px] whitespace-nowrap z-20">Móp nhẹ vè hông phải</span>
+</button>
+<button class="absolute bottom-[16%] left-[45%] group flex items-center justify-center" title="Xước sơn cản sau" type="button">
+<span class="w-6 h-6 rounded-full bg-status-danger text-on-error flex items-center justify-center font-label-code text-[11px] font-bold shadow-md ring-4 ring-status-danger/20 transition-transform group-hover:scale-125">3</span>
+<span class="absolute -bottom-6 hidden group-hover:block bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded text-[10px] whitespace-nowrap z-20">Xước vệt 8cm cản sau</span>
+</button>
+</div>
+<div class="w-full flex items-center justify-between pt-space-xs text-[11px] text-slate-text-secondary">
+<span>* Hình ảnh ghi nhận tình trạng xe khi bàn giao tại xưởng</span>
+<button class="text-brand-accent-blue font-label-md flex items-center gap-1 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">add_a_photo</span> Chụp ảnh thực tế (3 ảnh)
+            </button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-slate-text-secondary flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">record_voice_over</span>
+              Yêu cầu của khách hàng khi tiếp nhận
+            </span>
+<span class="text-[11px] text-outline font-label-code">Khách ký xác nhận bàn giao</span>
+</label>
+<div class="bg-surface-container-low p-space-md rounded-xl text-body-md text-slate-text-primary relative group">
+<p class="leading-relaxed">
+              “Bảo dưỡng cấp 5 vạn km, kiểm tra tiếng kêu lục cục dưới gầm khi qua gờ giảm tốc (nghi rơ càng A), thay dầu động cơ định kỳ &amp; lọc nhớt chính hãng.”
+            </p>
+<div class="mt-space-sm pt-space-xs flex items-center gap-space-sm flex-wrap text-body-sm text-slate-text-secondary">
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Đã kiểm tra phanh sơ bộ
+              </span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Không để tư trang có giá trị
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md flex-1">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-headline-md text-headline-md">
+<span class="material-symbols-outlined text-[22px]">request_quote</span>
+<span>Bảng Dự Toán Chi Phí &amp; Báo Giá Dịch Vụ</span>
+</div>
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl">
+<button class="px-space-md py-1 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm" id="tabBtnAll" type="button">Tất cả mục</button>
+<button class="px-space-md py-1 rounded-lg font-label-md text-label-md text-slate-text-secondary hover:text-slate-text-primary" id="tabBtnLabor" type="button">Tiền công (2)</button>
+<button class="px-space-md py-1 rounded-lg font-label-md text-label-md text-slate-text-secondary hover:text-slate-text-primary" id="tabBtnParts" type="button">Phụ tùng (3)</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline pl-10 pr-4 py-2 rounded-xl text-body-sm focus:outline-none focus:ring-2 focus:ring-brand-accent-blue" placeholder="Tìm tên mã phụ tùng, công thợ (VD: Dầu Mobil, Lọc dầu, Má phanh)..." type="text"/>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<button class="inline-flex items-center gap-1 px-space-md py-2 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-slate-text-primary font-label-md text-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">shelves</span>
+<span>Kho phụ tùng nhanh</span>
+</button>
+<button class="inline-flex items-center gap-1 px-space-md py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-brand-accent-blue shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Thêm dòng mới</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-headline-md text-headline-md text-slate-text-primary">I. Tiền công dịch vụ &amp; Kỹ thuật</span>
+</div>
+<span class="font-label-code text-label-code text-primary font-bold">850.000 đ</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-slate-text-secondary font-label-md text-label-md rounded-lg">
+<th class="py-2.5 px-space-md rounded-l-lg">Hạng mục công việc</th>
+<th class="py-2.5 px-space-md text-center">ĐVT</th>
+<th class="py-2.5 px-space-md text-center">SL</th>
+<th class="py-2.5 px-space-md text-right">Đơn giá</th>
+<th class="py-2.5 px-space-md text-right">Thành tiền</th>
+<th class="py-2.5 px-space-sm text-center rounded-r-lg"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-slate-text-primary">Bảo dưỡng cấp trung bình (Cấp 50.000 km)</span>
+<span class="font-body-sm text-body-sm text-slate-text-secondary">Vệ sinh bugi, lọc gió động cơ, lọc gió điều hòa, cân chỉnh lốp</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center font-body-sm text-body-sm text-slate-text-secondary">Gói</td>
+<td class="py-3 px-space-md text-center font-label-code text-label-code font-semibold">1</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code text-slate-text-secondary">550.000</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code font-bold text-slate-text-primary">550.000 đ</td>
+<td class="py-3 px-space-sm text-center">
+<button class="text-slate-text-secondary hover:text-status-danger p-1 rounded"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-slate-text-primary">Kiểm tra hạ gầm, siết ốc rotuyn &amp; thay thế càng A</span>
+<span class="font-body-sm text-body-sm text-slate-text-secondary">Xử lý tiếng lục cục gầm trước, cân chỉnh thước lái laser</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center font-body-sm text-body-sm text-slate-text-secondary">Gói</td>
+<td class="py-3 px-space-md text-center font-label-code text-label-code font-semibold">1</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code text-slate-text-secondary">300.000</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code font-bold text-slate-text-primary">300.000 đ</td>
+<td class="py-3 px-space-sm text-center">
+<button class="text-slate-text-secondary hover:text-status-danger p-1 rounded"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-md text-headline-md text-slate-text-primary">II. Phụ tùng, dầu nhớt &amp; Vật tư thay thế</span>
+</div>
+<span class="font-label-code text-label-code text-secondary font-bold">3.850.000 đ</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-slate-text-secondary font-label-md text-label-md rounded-lg">
+<th class="py-2.5 px-space-md rounded-l-lg">Tên vật tư / Mã phụ tùng</th>
+<th class="py-2.5 px-space-md text-center">Tồn kho</th>
+<th class="py-2.5 px-space-md text-center">SL</th>
+<th class="py-2.5 px-space-md text-right">Đơn giá bán</th>
+<th class="py-2.5 px-space-md text-right">Thành tiền</th>
+<th class="py-2.5 px-space-sm text-center rounded-r-lg"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-slate-text-primary">Dầu tổng hợp Mobil 1 ESP 5W-30 (Can 1L)</span>
+<span class="font-label-code text-[11px] text-slate-text-secondary">MOB-1ESP-5W30 • Tiêu chuẩn MB 229.52</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-label-code bg-status-completed-subtle text-status-completed font-semibold">Còn 42L</span>
+</td>
+<td class="py-3 px-space-md text-center font-label-code text-label-code font-semibold">6 Lít</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code text-slate-text-secondary">310.000</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code font-bold text-slate-text-primary">1.860.000 đ</td>
+<td class="py-3 px-space-sm text-center">
+<button class="text-slate-text-secondary hover:text-status-danger p-1 rounded"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-slate-text-primary">Lọc dầu động cơ chính hãng Mercedes</span>
+<span class="font-label-code text-[11px] text-slate-text-secondary">A2701800109 • OEM Germany</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-label-code bg-status-completed-subtle text-status-completed font-semibold">Còn 8 cái</span>
+</td>
+<td class="py-3 px-space-md text-center font-label-code text-label-code font-semibold">1 Cái</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code text-slate-text-secondary">390.000</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code font-bold text-slate-text-primary">390.000 đ</td>
+<td class="py-3 px-space-sm text-center">
+<button class="text-slate-text-secondary hover:text-status-danger p-1 rounded"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-slate-text-primary">Cao su càng A dưới (Bộ trái + phải)</span>
+<span class="font-label-code text-[11px] text-slate-text-secondary">A2053336100 • Khắc phục dằn xóc gầm</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-label-code bg-status-in-progress-subtle text-status-in-progress font-semibold">Còn 2 bộ</span>
+</td>
+<td class="py-3 px-space-md text-center font-label-code text-label-code font-semibold">2 Cái</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code text-slate-text-secondary">800.000</td>
+<td class="py-3 px-space-md text-right font-label-code text-label-code font-bold text-slate-text-primary">1.600.000 đ</td>
+<td class="py-3 px-space-sm text-center">
+<button class="text-slate-text-secondary hover:text-status-danger p-1 rounded"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-auto pt-space-md flex flex-col gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-body-md text-slate-text-secondary">
+<span>Tổng tiền phụ tùng:</span>
+<span class="font-label-code text-slate-text-primary font-semibold">3.850.000 đ</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-slate-text-secondary">
+<span>Tổng tiền công kỹ thuật:</span>
+<span class="font-label-code text-slate-text-primary font-semibold">850.000 đ</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-status-completed">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">loyalty</span> Giảm giá VIP Silver (5% trên công &amp; nhớt):
+              </span>
+<span class="font-label-code font-bold">- 235.000 đ</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-slate-text-secondary">
+<span>Thuế VAT (8%):</span>
+<span class="font-label-code text-slate-text-primary font-semibold">357.200 đ</span>
+</div>
+<div class="h-px bg-slate-border my-1"></div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-slate-text-primary">TỔNG CỘNG THANH TOÁN DỰ KIẾN:</span>
+<span class="font-body-sm text-body-sm text-slate-text-secondary">Giá đã bao gồm vật tư, công thay và thuế GTGT</span>
+</div>
+<span class="font-stat-display text-stat-display text-primary font-bold">4.822.200 đ</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<button class="w-full inline-flex items-center justify-center gap-2 bg-surface-container hover:bg-surface-container-high text-primary py-3 px-space-md rounded-xl font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px] text-[#0068FF]">send_to_mobile</span>
+<span>Gửi báo giá qua Zalo/SMS (E-Approval)</span>
+</button>
+<button class="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-brand-accent-blue text-on-primary py-3 px-space-md rounded-xl font-headline-md text-headline-md transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span>Khách duyệt &amp; Tạo lệnh sửa chữa (RO)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const fuelRange = document.getElementById('fuelRange');
+  const fuelText = document.getElementById('fuelText');
+  if (fuelRange && fuelText) {
+    fuelRange.addEventListener('input', (e) => {
+      fuelText.innerText = `${e.target.value}%`;
+    });
+  }
+
+  const tabBtnAll = document.getElementById('tabBtnAll');
+  const tabBtnLabor = document.getElementById('tabBtnLabor');
+  const tabBtnParts = document.getElementById('tabBtnParts');
+
+  function resetTabs() {
+    [tabBtnAll, tabBtnLabor, tabBtnParts].forEach(btn => {
+      if (btn) {
+        btn.className = 'px-space-md py-1 rounded-lg font-label-md text-label-md text-slate-text-secondary hover:text-slate-text-primary';
+      }
+    });
+  }
+
+  if (tabBtnAll && tabBtnLabor && tabBtnParts) {
+    tabBtnAll.addEventListener('click', () => {
+      resetTabs();
+      tabBtnAll.className = 'px-space-md py-1 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm';
+    });
+    tabBtnLabor.addEventListener('click', () => {
+      resetTabs();
+      tabBtnLabor.className = 'px-space-md py-1 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm';
+    });
+    tabBtnParts.addEventListener('click', () => {
+      resetTabs();
+      tabBtnParts.className = 'px-space-md py-1 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm';
+    });
+  }
+</script></main></div></body></html>
